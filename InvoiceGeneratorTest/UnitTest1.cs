@@ -55,5 +55,14 @@ namespace InvoiceGeneratorTest
                 Assert.AreEqual("Time Cannot be 0", IE.Message);
             }
         }
+        //find the total fare for multiple ride
+        [TestMethod]
+        public void TotalFareForMultipleRides()
+        {
+            Rides[] rides = { new Rides(40, 10), new Rides(50, 25), new Rides(35, 5) };
+            var actual = invoice.CalcualateTotalFair(rides);
+            double expected = 1290;
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
