@@ -64,5 +64,16 @@ namespace InvoiceGeneratorTest
             double expected = 1290;
             Assert.AreEqual(expected, actual);
         }
+        //given the ride details return invoice summary
+        [TestMethod]
+        public void GivenMultipleRaidInvoiceSummaryTest()
+        {
+            Rides[] rides = { new Rides(40, 10), new Rides(50, 25), new Rides(35, 5) };
+            InvoiceSummary actual = invoice.CalcualateTotalFair(rides);
+            InvoiceSummary expected = new InvoiceSummary(3, 1290);
+            var res = actual.Equals(expected);
+            Assert.IsNotNull(res);
+        }
+
     }
 }
