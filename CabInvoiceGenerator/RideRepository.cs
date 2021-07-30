@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CabInvoiceGenerator
 {
-    class RideRepository
+   public class RideRepository
     {
         Dictionary<int, InvoiceSummary> userSummary = new Dictionary<int, InvoiceSummary>();
 
@@ -27,7 +27,7 @@ namespace CabInvoiceGenerator
                 }
             }
         }
-
+        //
         public InvoiceSummary ReadSummary(int id)
         {
             return userSummary[id];
